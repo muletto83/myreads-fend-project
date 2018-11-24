@@ -32,7 +32,7 @@ export default class Book extends Component {
           </div>
           <div className="book-title">{this.props.book.title || "Title Disappeared O_O"}</div>
           <div className="book-authors">
-          {(this.props.book.authors && this.props.book.authors[0]) || "No Author :("}</div>
+          {(this.props.book.authors && this.props.book.authors[0]) || "Author Vanished O_O"}</div>
         </div>
       </li>
     )

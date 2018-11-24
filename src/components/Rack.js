@@ -10,7 +10,8 @@ export default class Rack extends Component {
   render() {
     //building the Racks
     return (
-      <div className="bookshelf">
+      //wrapping into section for just a little of semantic :)
+      <section className="bookshelf">
         <h2 className="bookshelf-title">{this.props.name}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
@@ -19,7 +20,7 @@ export default class Rack extends Component {
             }
           </ol>
         </div>
-      </div>
+      </section>
     )
   }
 }

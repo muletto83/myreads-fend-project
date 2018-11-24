@@ -10,6 +10,7 @@ import SearchPage from './components/pages/SearchPage'
 export default class BooksApp extends Component {
 
   render() {
+    /*Setting up the Routing */
     return (
       <div>
         <Route exact path="/" component= { HomePage } />

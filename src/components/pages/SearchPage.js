@@ -75,7 +75,7 @@ export default class SearchPage extends Component {
               <button className="close-search">Close</button>
             </Link>
             <div className="search-books-input-wrapper">
-              {/*Fix a type into the name error TypeError: _this3.updateQuery is not a function///
+              {/*Fix a type into the name for error TypeError: _this3.updateQuery is not a function///
                 ===== adding value and monitoring the changes when we have changes ======
                 ======= call this.updateQuery passing in the new value ==========/////=/=//==/ */}
               <input
