@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-//importing Book Component
+//importing the Book Component
 import Book from './Book'
 
 export default class Rack extends Component {
-  componentDidMount() {
-    //logging this to evaluate our next moves
-    //console.log(this)
-  }
+  // componentDidMount() {
+  //   //logging this to evaluate our next moves
+  //   //console.log(this)
+  // }
   render() {
     //building the Racks
     return (

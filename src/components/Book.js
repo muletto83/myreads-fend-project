@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-//importing Link from library 'react-router-dom'
-import { Link } from 'react-router-dom'
 
 export default class Book extends Component {
   // componentDidMount() {

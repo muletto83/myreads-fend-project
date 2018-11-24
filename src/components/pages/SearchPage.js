@@ -9,7 +9,7 @@ import Book from '../Book'
 export default class SearchPage extends Component {
   //setting the initial state in the Facebook React Docs "way"
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       lib: [],
       results: [],
@@ -46,7 +46,7 @@ export default class SearchPage extends Component {
         response.forEach(bk => {
           let fltr = this.state.lib.filter(Bk => Bk.id === bk.id);
           if (fltr[0]) {
-            bk.shelf = fltr[0].shelf;
+            bk.shelf = fltr[0] ? fltr[0].shelf : null;
           }
         })
         return this.setState({ results: response })
