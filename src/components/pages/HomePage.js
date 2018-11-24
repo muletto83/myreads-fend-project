@@ -7,7 +7,7 @@ import * as BooksAPI from '../../BooksAPI'
 import Rack from '../Rack'
 
 export default class HomePage extends Component {
-  //introducing state
+  //setting the initial state as Facebook React Docs
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +23,17 @@ export default class HomePage extends Component {
     })
   }
 
+  //This method is for updating the book
+  bookReloader = (book, shelf) => {
+    BooksAPI.update(book, shelf)
+    .then(response => {
+      book.shelf = shelf;
+      this.setState(state => ({
+        lib: state.lib.filter( bk => bk.id !== book.id).concat([book])
+      }))
+    })
+  }
+
   render() {
     return (
       <div>
@@ -32,10 +43,10 @@ export default class HomePage extends Component {
           </div>
           <div className="list-books-content">
             <div>
-              {/*adding props to the components based on the data received from the api call */}
-              <Rack name="Currently Reading" books={this.state.lib.filter(f => f.shelf === "currentlyReading")} />
-              <Rack name="Want to Read" books={this.state.lib.filter(f => f.shelf === "wantToRead")} />
-              <Rack name="Read" books={this.state.lib.filter(f => f.shelf === "read")} />
+              {/*adding props to the components based on the data received from the api call*/}
+              <Rack bookReloader={this.bookReloader} name="Currently Reading" books={this.state.lib.filter(f => f.shelf === "currentlyReading")} />
+              <Rack bookReloader={this.bookReloader} name="Want to Read" books={this.state.lib.filter(f => f.shelf === "wantToRead")} />
+              <Rack bookReloader={this.bookReloader} name="Read" books={this.state.lib.filter(f => f.shelf === "read")} />
             </div>
           </div>
           <div className="open-search">

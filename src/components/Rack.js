@@ -16,7 +16,7 @@ export default class Rack extends Component {
         <div className="bookshelf-books">
           <ol className="books-grid">
             {
-              this.props.books.map((book, key) => <Book book={book} key={key} />)
+              this.props.books.map((book, key) => <Book bookReloader={this.props.bookReloader} book={book} key={key} />)
             }
           </ol>
         </div>
